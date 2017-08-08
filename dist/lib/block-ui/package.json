@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      "block-ui@2.70.1",
+      "/Users/rodick_huang/workspace/git/event-termtest"
+    ]
+  ],
+  "_from": "block-ui@2.70.1",
+  "_id": "block-ui@2.70.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/block-ui",
+  "_nodeVersion": "1.6.2",
+  "_npmUser": {
+    "email": "sbekkhus91@gmail.com",
+    "name": "simenb"
+  },
+  "_npmVersion": "2.7.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "block-ui",
+    "raw": "block-ui@2.70.1",
+    "rawSpec": "2.70.1",
+    "scope": null,
+    "spec": "2.70.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/block-ui/-/block-ui-2.70.1.tgz",
+  "_shasum": "c862d64ee6288fb78123377c6680bc7ab262103f",
+  "_shrinkwrap": null,
+  "_spec": "block-ui@2.70.1",
+  "_where": "/Users/rodick_huang/workspace/git/event-termtest",
+  "author": {
+    "name": "M. Alsup",
+    "url": "http://jquery.malsup.com"
+  },
+  "bugs": {
+    "url": "https://github.com/malsup/blockui/issues"
+  },
+  "dependencies": {
+    "jquery": ">=1.7.x"
+  },
+  "description": "Simulate synchronous ajax by blocking - not locking - the UI. This plugin lets you block user interaction with the page or with a specific element on the page. Also great at displaying modal dialogs.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "c862d64ee6288fb78123377c6680bc7ab262103f",
+    "tarball": "https://registry.npmjs.org/block-ui/-/block-ui-2.70.1.tgz"
+  },
+  "gitHead": "b60cb498791528943c590bba26afe2ece4d70ec8",
+  "homepage": "http://jquery.malsup.com/block/",
+  "keywords": [
+    "block",
+    "dialog",
+    "ecosystem:jquery",
+    "jquery-plugin",
+    "modal",
+    "overlay"
+  ],
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://malsup.github.com/mit-license.txt"
+    },
+    {
+      "type": "GPL",
+      "url": "http://malsup.github.com/gpl-license-v2.txt"
+    }
+  ],
+  "main": "jquery.blockUI.js",
+  "maintainers": [
+    {
+      "email": "sbekkhus91@gmail.com",
+      "name": "simenb"
+    }
+  ],
+  "name": "block-ui",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malsup/blockui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.70.1"
+}

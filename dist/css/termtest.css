@@ -1,0 +1,129 @@
+.layout-top,
+.layout-bottom {
+  margin: 10px auto;
+}
+.layout-left {
+  width: 22%;
+  float: left;
+}
+.layout-right {
+  margin-left: 23%;
+}
+#ehanlin-header {
+  text-align: right;
+}
+.date-text {
+  color: #fd4638;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.time-text {
+  padding: 2px 0;
+  font-size: 10px;
+}
+.score-text {
+  padding: 2px 0;
+  font-size: 10px;
+  color: gray;
+}
+.btn {
+  padding: 10px 20px;
+}
+.schedule {
+  position: relative;
+  width: 98%;
+  margin: auto;
+}
+.exam-period {
+  width: 100px;
+}
+img.banner {
+  display: block;
+  margin: auto;
+  width: 98%;
+}
+img.grade {
+  width: 100px;
+}
+.section {
+  padding: 10px 0;
+}
+.section table {
+  width: 100%;
+  margin: 0 auto;
+  border: 0;
+  box-shadow: 1px 1px 4px 1px #e7e6e6;
+  color: black;
+}
+.section td {
+  padding: 10px 0;
+  border-top: 0;
+}
+.section .category {
+  font-size: 13pt;
+}
+.sim-hero {
+  text-align: left;
+  background-color: black;
+  background-size: 400px 130px;
+  width: 400px;
+  height: 130px;
+}
+.sim-hero a:hover {
+  text-decoration: none;
+}
+.sim-hero table {
+  font-size: 16px;
+  color: black;
+  padding: 20px 0 0 70px;
+  white-space: nowrap;
+}
+.sim-hero table th {
+  font-size: 20px;
+  color: #3275ab;
+}
+.sim-hero table td {
+  padding: 0 2px;
+}
+.sim-board {
+  font-family: "微軟正黑體", monospace;
+}
+.sim-board .exam-name {
+  font-size: 45px;
+  font-weight: bold;
+  color: #3275ab;
+  padding-top: 80px;
+  text-shadow: 2px 2px 1px black;
+}
+.sim-board .exam-rank {
+  margin-top: -10px;
+  display: block;
+  color: yellow;
+  text-shadow: 1px 1px black;
+}
+.sim-board .exam-info {
+  float: right;
+  width: 410px;
+  margin-right: 50px;
+}
+.sim-board .exam-code {
+  display: inline-block;
+  font-size: 20px;
+}
+.sim-board ul {
+  padding: 20px 0 0 85px;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+.sim-board ul li {
+  height: 85px;
+}
+.sim-board .complete .exam-name {
+  padding: 75px 0 0 125px;
+}
+.sim-board .complete ul {
+  padding-top: 75px;
+}
