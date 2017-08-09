@@ -46,6 +46,13 @@ img.banner {
 img.grade {
   width: 100px;
 }
+img.board {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
 .section {
   padding: 10px 0;
 }

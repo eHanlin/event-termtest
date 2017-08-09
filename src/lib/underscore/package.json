@@ -25,7 +25,7 @@
     "type": "version"
   },
   "_requiredBy": [
-    "#DEV:/"
+    "/"
   ],
   "_shrinkwrap": null,
   "_spec": "underscore@1.8.3",

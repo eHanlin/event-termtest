@@ -28,7 +28,8 @@
     "type": "version"
   },
   "_requiredBy": [
-    "/"
+    "/",
+    "/block-ui"
   ],
   "_resolved": "https://registry.npmjs.org/jquery/-/jquery-1.7.2.tgz",
   "_shasum": "a93746763aca75a34df4c16395b0826310d0eaf2",

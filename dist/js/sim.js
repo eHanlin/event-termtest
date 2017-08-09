@@ -64,15 +64,13 @@ window.Sim = (function($, _) {
                 return { examType: examType, examName: examName, heroes: heroes }
             });
 
-            var img = list[0].heroes[0].img.board;
-
             $.blockUI({
                 message: $('#sim-board-template').tmpl(list),
                 css: {
-                    backgroundImage: "url(" + img + ")",
                     top:  ($(window).height() - 490) /2 + 'px',
                     left: ($(window).width() - 790) /2 + 'px',
                     border: '1px solid rgb(95, 95, 95)',
+                    borderRadius: "10%",
                     padding: '0px',
                     boxShadow: 'rgb(135, 135, 135) 0px 0px 8px 2px',
                     width: '790',
