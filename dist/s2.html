@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="https://www.ehanlin.com.tw/lesscss/ehanlin-basicss.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/termtest.css"/>
+        <title>翰林雲端學院 - 線上學習首選 - 免費試用小中高課程</title>
+    </head>
+
+    <body class="basic">
+        <header id="ehanlin-header" class="layout-top"></header>
+        <nav id="ehanlin-menu"></nav>
+
+        <div class="layout-left">
+            <section id="event-left-side"></section>
+        </div>
+
+        <div class="layout-right container">
+            <div class="box">
+                <img src="./img/s2/banner.png" class="banner">
+            </div>
+
+            <div class="box">
+                <div class="box-title">
+                    <div class="tag blue">
+                        <p>Term Test</p>
+                    </div>
+
+                    <div class="content">106(下) 線上模擬段考</div>
+                </div>
+
+                <div class="schedule"></div>
+                <img src="./img/s2/notice.png" class="banner">
+            </div>
+        </div>
+
+        <footer id="ehanlin-footer" class="layout-bottom"></footer>
+
+        <script type="text/javascript" src="./lib/underscore/underscore-min.js"></script>
+        <script type="text/javascript" src="./lib/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="./lib/jquery/tmp/jquery.js"></script>
+        <script type="text/javascript" src="./lib/block-ui/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="./js/jquery.tmpl.js" ></script>
+        <script type="text/javascript" src="./js/sim.js"></script>
+
+        <script id="sim-board-template" type="text/jquery-template">
+            <div class="sim-board {{= examType}}">
+                <img class="board" src="./img/s2/hero-board.png">
+                <div class="exam-name">{{= examName}}</div>
+                <ul>
+                    {{each heroes}}
+                    <li>
+                        <span class="fa fa-stack">
+                            <i class="fa fa-stack-2x fa-trophy"></i>
+                            <span class="fa fa-stack-1x">
+                                <span class="exam-rank">{{= rank}}</span>
+                            </span>
+                        </span>
+
+                        <span>{{= userName}}</span>
+                        <span class="exam-info">{{= school}}<span class="exam-code">准考證號碼: {{= examCode}}</span></span>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </script>
+
+        <script id="termtest-template" type="text/x-jquery-template">
+            <div class="section">
+                <img class="banner" src="./img/s2/{{= comic}}">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="center">
+                            <div>第<h1>{{= number}}</h1>回</div>
+                        </td>
+
+                        {{each exam}}
+                        {{if start}}
+                        <td align="center">
+                            <div>
+                                <span class="pre">開始: </span>
+                                <span class="date-text">{{= moment(start).format("YYYY/MM/DD")}}</span>
+                                <span class="time-text">中午{{= moment(start).format("HH:mm")}}</span>
+                            </div>
+                            <div>
+                                <span class="pre">結束: </span>
+                                <span class="date-text">{{= moment(end).format("YYYY/MM/DD")}}</span>
+                                <span class="time-text">中午{{= moment(end).format("HH:mm")}}</span>
+                            </div>
+                            <div class="score-text">({{= moment(result).format("YYYY/MM/DD")}} 放榜)</div>
+
+                            {{if now > result}}
+                            <a class="btn result" data-year="{{= year}}" data-volume="{{= volume}}" data-number="{{= order}}">英雄榜</a>
+                            {{else now > end}}
+                            <a class="btn disable">己結束</a>
+                            {{else now > start}}
+                            <a href="/key/106STERMTEST/SalesPlans/productSets/{{= productSet}}.html" class="btn purple">{{= title}}</a>
+                            {{else}}
+                            <a class="btn disable">準備中</a>
+                            {{/if}}
+                        </td>
+                        {{else}}
+                        <td>-</td>
+                        {{/if}}
+                        {{/each}}
+                    </tr>
+                </table>
+            </div>
+        </script>
+
+        <script type="text/javascript">
+            (function($) {
+                $(function () {
+                    var now = new Date();
+                    Sim.getTermtest(106, "sectional", function(data) {
+                        var schedule = _.chain(data)
+                            .filter(function(it) { return ["2", "4", "6"].indexOf(it.volume) != -1 })
+                            .each(function(it) {
+                                it.now = now.getTime();
+                                switch (it.volume) {
+                                    case "2":
+                                        it.title = "國一考場";
+                                        it.productSet = "y106_g7_s2_all_mocks";
+                                        break;
+                                    case "4":
+                                        it.title = "國二考場";
+                                        it.productSet = "y106_g8_s2_all_mocks";
+                                        break;
+                                    case "6":
+                                        it.title = "國三考場";
+                                        it.productSet = "y106_g9_s2_all_mocks";
+                                        break;
+                                }
+                            })
+                            .groupBy(function(it) { return it.order })
+                            .map(function(exam, number) {
+                                var comic;
+                                if (exam[0].now > exam[0].start) {
+                                    comic = "comic" + number + ".png";
+                                } else {
+                                    comic = "wait" + number + ".png";
+                                }
+
+                                return { number: number, exam: exam, comic: comic }
+                            })
+                            .value();
+
+                        $('#termtest-template').tmpl(schedule).appendTo(".schedule");
+                        $(".result").click(function() {
+                            var $this = $(this);
+                            var year = $this.data("year");
+                            var volume = $this.data("volume");
+                            var number = $this.data("number");
+                            Sim.getBoard(year, volume, number);
+                        })
+                    });
+                });
+            })(jQuery)
+        </script>
+
+        <script type="text/javascript" data-module="ehanlin-header,ehanlin-menu,ehanlin-footer,ehanlin-event-left-side" src="https://s3-ap-northeast-1.amazonaws.com/ehanlin-web-resource/common_webcomponent/current/js/ehanlin-loader.js"></script>
+    </body>
+</html>
