@@ -2,7 +2,7 @@ window.Sim = (function($, _) {
 
     var rankLimit = 3;
 
-    var host = "https://www.ehanlin.com.tw";
+    var host = "https://test.ehanlin.com.tw";
 
     /**
      * 取得模擬考資訊
