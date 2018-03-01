@@ -1,5 +1,4 @@
 #!/bin/bash
-export TRAVIS_TAG="2.0.3-SNAPSHOT"
 if [[ "${TRAVIS_TAG}" == *-SNAPSHOT ]]; then
     API_HOST='test.ehanlin.com.tw'
 else
