@@ -51,7 +51,6 @@ window.Sim = (function($, _) {
      */
     function getBoard(year, volume, number) {
         getHero({year: year, volume: volume, number: number}, function(resp) {
-            console.log(resp);
             var exams = _.chain(resp)
                 .filter(function(it) { return it.rank <= rankLimit })
                 .groupBy(function(it) { return [it.year, it.volume, it.number, it.examType, it.examName].join("|") })
