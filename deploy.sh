@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $1 == *-SNAPSHOT ]]; then
+if [[ ${TRAVIS_TAG} == *-SNAPSHOT ]]; then
     API_HOST='test.ehanlin.com.tw'
 else
     API_HOST='www.ehanlin.com.tw'
