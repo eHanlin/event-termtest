@@ -68,10 +68,11 @@ window.Sim = (function($, _) {
                 css: {
                     top:  ($(window).height() - 490) /2 + 'px',
                     left: ($(window).width() - 790) /2 + 'px',
-                    border: '1px solid rgb(95, 95, 95)',
-                    borderRadius: "10%",
+                    // border: '1px solid rgb(95, 95, 95)',
+                    // borderRadius: "10%",
+                    border: "none",
+                    background: "none",
                     padding: '0px',
-                    boxShadow: 'rgb(135, 135, 135) 0px 0px 8px 2px',
                     width: '790',
                     height: '490',
                     cursor: 'default'

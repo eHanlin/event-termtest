@@ -18,7 +18,7 @@
 
         <div class="layout-right container">
             <div class="box">
-                <img src="./img/20170821/banner.png" class="banner">
+                <img src="./img/s1/main.png" class="banner">
             </div>
 
             <div class="box">
@@ -27,11 +27,11 @@
                         <p>Term Test</p>
                     </div>
 
-                    <div class="content">106(上) 線上模擬段考</div>
+                    <div class="content">107(上) 線上模擬段考</div>
                 </div>
 
                 <div class="schedule"></div>
-                <img src="./img/20170821/notice.png" class="banner">
+                <img src="./img/s1/notice.png" class="banner">
             </div>
         </div>
 
@@ -46,7 +46,7 @@
 
         <script id="sim-board-template" type="text/jquery-template">
             <div class="sim-board {{= examType}}">
-                <img class="board" src="./img/20170821/hero-board.png">
+                <img class="board" src="./img/s1/base.png">
                 <div class="exam-name">{{= examName}}</div>
                 <ul>
                     {{each heroes}}
@@ -68,7 +68,7 @@
 
         <script id="termtest-template" type="text/x-jquery-template">
             <div class="section">
-                <img class="banner" src="./img/20170821/{{= comic}}">
+                <img class="banner" src="./img/s1/{{= comic}}">
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="center">
@@ -113,7 +113,7 @@
             (function($) {
                 $(function () {
                     var now = new Date();
-                    Sim.getTermtest(106, "sectional", function(data) {
+                    Sim.getTermtest(107, "sectional", function(data) {
                         var schedule = _.chain(data)
                             .filter(function(it) { return ["1", "3", "5"].indexOf(it.volume) != -1 })
                             .each(function(it) {
@@ -134,7 +134,7 @@
                                 }
                             })
                             .groupBy(function(it) { return it.order })
-                            .map(function(exam, number) { return { number: number, exam: exam, comic: "comic" + number + ".png" } })
+                            .map(function(exam, number) { return { number: number, exam: exam, comic: number + "st.png" } })
                             .value();
 
                         $('#termtest-template').tmpl(schedule).appendTo(".schedule");

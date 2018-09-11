@@ -97,10 +97,11 @@ img.board {
   font-family: "微軟正黑體", monospace;
 }
 .sim-board .exam-name {
-  font-size: 45px;
+  font-size: 40px;
+  margin-right: 40px;
   font-weight: bold;
   color: #3275ab;
-  padding-top: 80px;
+  padding-top: 120px;
   text-shadow: 2px 2px 1px black;
 }
 .sim-board .exam-rank {
@@ -119,8 +120,8 @@ img.board {
   font-size: 20px;
 }
 .sim-board ul {
-  padding: 20px 0 0 85px;
-  font-size: 28px;
+  padding: 40px 0 0 85px;
+  font-size: 24px;
   font-weight: bold;
   color: black;
   text-align: left;
