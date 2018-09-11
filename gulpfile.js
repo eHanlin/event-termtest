@@ -10,11 +10,11 @@ var less = require('less');
 var Storage = require('@google-cloud/storage');
 var gcs = new Storage({ projectId: "tutor-204108" })
 
-function uploadGCS() {
+function uploadGCS(bucketName) {
     return es.map(function(file, cb) {
         fs.stat(file.path, function(err, stats) {
             if (stats.isFile()) {
-                gcs.bucket("tutor-events")
+                gcs.bucket(bucketName)
                     .upload(file.path, {
                         destination: `/event/termtest/${file.relative}`,
                         public: true
@@ -109,8 +109,13 @@ gulp.task('package', function() {
     return deferred.promise;
 });
 
-gulp.task("uploadGCS", function() {
+gulp.task("uploadGCSTest", function() {
     return gulp.src(["dist/**/*"], {base: "dist"})
-            .pipe(uploadGCS());
+            .pipe(uploadGCS("tutor-events-test"));
+});
+
+gulp.task("uploadGCSProd", function() {
+    return gulp.src(["dist/**/*"], {base: "dist"})
+            .pipe(uploadGCS("tutor-events"));
 });
 
