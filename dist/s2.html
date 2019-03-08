@@ -28,7 +28,7 @@
                         <p>Term Test</p>
                     </div>
 
-                    <div class="content">106(下) 線上模擬段考</div>
+                    <div class="content">107(下) 線上模擬段考</div>
                 </div>
 
                 <div class="schedule"></div>
@@ -47,7 +47,7 @@
 
         <script id="sim-board-template" type="text/jquery-template">
             <div class="sim-board {{= examType}}">
-                <img class="board" src="./img/s2/hero-board.png">
+                <img class="board" src="./img/s2/base.png">
                 <div class="exam-name">{{= examName}}</div>
                 <ul>
                     {{each heroes}}
@@ -114,7 +114,7 @@
             (function($) {
                 $(function () {
                     var now = new Date();
-                    Sim.getTermtest(106, "sectional", function(data) {
+                    Sim.getTermtest(107, "sectional", function(data) {
                         var schedule = _.chain(data)
                             .filter(function(it) { return ["2", "4", "6"].indexOf(it.volume) != -1 })
                             .each(function(it) {
@@ -122,31 +122,23 @@
                                 switch (it.volume) {
                                     case "2":
                                         it.title = "國一考場";
-                                        it.productSet = "y106_g7_s2_all_mocks";
+                                        it.productSet = "y107_g7_s2_all_mocks";
                                         break;
                                     case "4":
                                         it.title = "國二考場";
-                                        it.productSet = "y106_g8_s2_all_mocks";
+                                        it.productSet = "y107_g8_s2_all_mocks";
                                         break;
                                     case "6":
                                         it.title = "國三考場";
-                                        it.productSet = "y106_g9_s2_all_mocks";
+                                        it.productSet = "y107_g9_s2_all_mocks";
                                         break;
                                 }
                             })
                             .groupBy(function(it) { return it.order })
-                            .map(function(exam, number) {
-                                var comic;
-                                if (exam[0].now > exam[0].start) {
-                                    comic = "comic" + number + ".png";
-                                } else {
-                                    comic = "wait" + number + ".png";
-                                }
-
-                                return { number: number, exam: exam, comic: comic }
-                            })
+                            .map(function(exam, number) { return { number: number, exam: exam, comic: number + "st.png" } })
                             .value();
 
+                        console.log(schedule)
                         $('#termtest-template').tmpl(schedule).appendTo(".schedule");
                         $(".result").click(function() {
                             var $this = $(this);
