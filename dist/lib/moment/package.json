@@ -1,53 +1,40 @@
 {
-  "_args": [
-    [
-      "moment@2.13.0",
-      "/Users/rodick_huang/workspace/git/event-termtest"
-    ]
-  ],
   "_from": "moment@2.13.0",
   "_id": "moment@2.13.0",
-  "_inCache": true,
-  "_installable": true,
+  "_inBundle": false,
+  "_integrity": "sha1-JBYtmVIebUD5muaTnoBtITnqrFI=",
   "_location": "/moment",
-  "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/moment-2.13.0.tgz_1460965287679_0.1848272318020463"
-  },
-  "_npmUser": {
-    "email": "iskren.chernev@gmail.com",
-    "name": "ichernev"
-  },
-  "_npmVersion": "1.4.6",
   "_phantomChildren": {},
   "_requested": {
-    "name": "moment",
+    "type": "version",
+    "registry": true,
     "raw": "moment@2.13.0",
+    "name": "moment",
+    "escapedName": "moment",
     "rawSpec": "2.13.0",
-    "scope": null,
-    "spec": "2.13.0",
-    "type": "version"
+    "saveSpec": null,
+    "fetchSpec": "2.13.0"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/moment/-/moment-2.13.0.tgz",
   "_shasum": "24162d99521e6d40f99ae6939e806d2139eaac52",
-  "_shrinkwrap": null,
   "_spec": "moment@2.13.0",
-  "_where": "/Users/rodick_huang/workspace/git/event-termtest",
+  "_where": "/Users/sukaihan/ehanlin/event/event-termtest",
   "author": {
-    "email": "iskren.chernev@gmail.com",
     "name": "Iskren Ivov Chernev",
+    "email": "iskren.chernev@gmail.com",
     "url": "https://github.com/ichernev"
   },
   "bugs": {
     "url": "https://github.com/moment/moment/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
-      "email": "washwithcare@gmail.com",
       "name": "Tim Wood",
+      "email": "washwithcare@gmail.com",
       "url": "http://timwoodcreates.com/"
     },
     {
@@ -55,22 +42,22 @@
       "url": "http://rockymeza.com"
     },
     {
-      "email": "mj1856@hotmail.com",
       "name": "Matt Johnson",
+      "email": "mj1856@hotmail.com",
       "url": "http://codeofmatt.com"
     },
     {
-      "email": "isaac@isaaccambron.com",
       "name": "Isaac Cambron",
+      "email": "isaac@isaaccambron.com",
       "url": "http://isaaccambron.com"
     },
     {
-      "email": "andre@oire.org",
       "name": "Andre Polykanine",
+      "email": "andre@oire.org",
       "url": "https://github.com/oire"
     }
   ],
-  "dependencies": {},
+  "deprecated": false,
   "description": "Parse, validate, manipulate, and display dates",
   "devDependencies": {
     "benchmark": "latest",
@@ -104,11 +91,6 @@
     "spacejam": "latest",
     "uglify-js": "latest"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "24162d99521e6d40f99ae6939e806d2139eaac52",
-    "tarball": "https://registry.npmjs.org/moment/-/moment-2.13.0.tgz"
-  },
   "dojoBuild": "package.js",
   "ender": "./ender.js",
   "engines": {
@@ -116,15 +98,15 @@
   },
   "homepage": "http://momentjs.com",
   "jspm": {
-    "buildConfig": {
-      "uglify": true
-    },
     "files": [
       "moment.js",
       "locale"
     ],
     "map": {
       "moment": "./moment"
+    },
+    "buildConfig": {
+      "uglify": true
     }
   },
   "keywords": [
@@ -140,19 +122,7 @@
   ],
   "license": "MIT",
   "main": "./moment.js",
-  "maintainers": [
-    {
-      "email": "washwithcare@gmail.com",
-      "name": "timrwood"
-    },
-    {
-      "email": "iskren.chernev@gmail.com",
-      "name": "ichernev"
-    }
-  ],
   "name": "moment",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/moment/moment.git"

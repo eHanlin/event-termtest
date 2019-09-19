@@ -1,5 +1,4 @@
 window.Sim = (function($, _) {
-
     var rankLimit = 3;
 
     var host = "";
@@ -8,7 +7,7 @@ window.Sim = (function($, _) {
      * 取得模擬考資訊
      */
     function getSimMetadata(year, onSuccess) {
-        $.when($.get(host + "/sim_"+ year + "/SimMataData")).done(onSuccess);
+        $.when($.get(host + "/sim_" + year + "/SimMataData")).done(onSuccess);
     }
 
     /**
@@ -23,23 +22,27 @@ window.Sim = (function($, _) {
      */
     function getTermtest(year, type, onSuccess) {
         getSimMetadata(year, function(resp) {
-            var schedule = _.filter(resp.result, function(it) { return it.year == year && it.type == type });
+            var schedule = _.filter(resp.result, function(it) {
+                return it.year == year && it.type == type;
+            });
             if (_.isFunction(onSuccess)) {
                 onSuccess(schedule);
             } else {
                 return schedule;
             }
-        })
+        });
     }
 
     /**
      * 取得最新的模擬考英雄榜
      */
     function getHeroBoard(year, onSuccess) {
-        getHero({year: year}, function(resp) {
-            var data = _.filter(resp.result, function(it) { return it.rank <= rankLimit });
+        getHero({ year: year }, function(resp) {
+            var data = _.filter(resp.result, function(it) {
+                return it.rank <= rankLimit;
+            });
             if (_.isFunction(onSuccess)) {
-                onSuccess(data)
+                onSuccess(data);
             } else {
                 return data;
             }
@@ -50,36 +53,40 @@ window.Sim = (function($, _) {
      * 取得模擬考榜單
      */
     function getBoard(year, volume, number) {
-        getHero({year: year, volume: volume, number: number}, function(resp) {
+        getHero({ year: year, volume: volume, number: number }, function(resp) {
             var exams = _.chain(resp)
-                .filter(function(it) { return it.rank <= rankLimit })
-                .groupBy(function(it) { return [it.year, it.volume, it.number, it.examType, it.examName].join("|") })
+                .filter(function(it) {
+                    return it.rank <= rankLimit;
+                })
+                .groupBy(function(it) {
+                    return [it.year, it.volume, it.number, it.examType, it.examName].join("|");
+                })
                 .value();
 
             var list = _.map(exams, function(heroes, key) {
                 var _data = key.split("|");
                 var examType = _data[3];
                 var examName = _data[4];
-                return { examType: examType, examName: examName, heroes: heroes }
+                return { examType: examType, examName: examName, heroes: heroes };
             });
 
             $.blockUI({
-                message: $('#sim-board-template').tmpl(list),
+                message: $("#sim-board-template").tmpl(list),
                 css: {
-                    top:  ($(window).height() - 490) /2 + 'px',
-                    left: ($(window).width() - 790) /2 + 'px',
+                    top: ($(window).height() - 490) / 2 + "px",
+                    left: ($(window).width() - 790) / 2 + "px",
                     // border: '1px solid rgb(95, 95, 95)',
                     // borderRadius: "10%",
                     border: "none",
                     background: "none",
-                    padding: '0px',
-                    width: '790',
-                    height: '490',
-                    cursor: 'default'
+                    padding: "0px",
+                    width: "790",
+                    height: "490",
+                    cursor: "default"
                 },
                 overlayCSS: {
-                    backgroundColor: '#000',
-                    opacity: '0.4'
+                    backgroundColor: "#000",
+                    opacity: "0.4"
                 },
                 onOverlayClick: $.unblockUI
             });
@@ -90,6 +97,5 @@ window.Sim = (function($, _) {
         getBoard: getBoard,
         getHeroBoard: getHeroBoard,
         getTermtest: getTermtest
-    }
-
+    };
 })(jQuery, _);
