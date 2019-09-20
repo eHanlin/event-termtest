@@ -6,7 +6,7 @@
         <link type="text/css" rel="stylesheet" href="https://www.ehanlin.com.tw/lesscss/ehanlin-basicss.css"/>
         <link type="text/css" rel="stylesheet" href="./css/termtest.css"/>
         <link type="image/png" rel="icon" href="https://www.ehanlin.com.tw/images/favicon.png"/>
-        <title>翰林雲端學院 - 線上學習首選 - 免費試用小中高課程</title>
+        <title>翰林雲端學院│跟著雲端的指引光束,準備段考不會迷路!</title>
     </head>
 
     <body class="basic">
@@ -19,7 +19,7 @@
 
         <div class="layout-right container">
             <div class="box">
-                <img src="./img/s1/main.png" class="banner">
+                <img src="./img/108s1/banner.png" class="banner">
             </div>
 
             <div class="box">
@@ -98,7 +98,7 @@
                             {{else now > start}}
                             <a href="/key/107FTERMTEST/SalesPlans/productSets/{{= productSet}}.html" class="btn purple">{{= title}}</a>
                             {{else}}
-                            <a class="btn disable">準備中</a>
+                            <a class="btn disable">尚未開放</a>
                             {{/if}}
                         </td>
                         {{else}}
@@ -121,15 +121,15 @@
                                 it.now = now.getTime();
                                 switch (it.volume) {
                                     case "1":
-                                        it.title = "國一考場";
+                                        it.title = "馬上挑戰";
                                         it.productSet = "y108_g7_s1_all_mocks";
                                         break;
                                     case "3":
-                                        it.title = "國二考場";
+                                        it.title = "馬上挑戰";
                                         it.productSet = "y108_g8_s1_all_mocks";
                                         break;
                                     case "5":
-                                        it.title = "國三考場";
+                                        it.title = "馬上挑戰";
                                         it.productSet = "y108_g9_s1_all_mocks";
                                         break;
                                 }
