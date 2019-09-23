@@ -29,7 +29,7 @@ let uploadGCSProd = bucketName => {
                 projectId: projectId,
                 public: true,
                 metadata: {
-                    cacheControl: "no-store"
+                    cacheControl: "no-store, no-transform"
                 }
             })
         );
@@ -48,7 +48,7 @@ let uploadGCSTest = bucketName => {
                 projectId: projectIdTest,
                 public: true,
                 metadata: {
-                    cacheControl: "no-store"
+                    cacheControl: "no-store, no-transform"
                 }
             })
         );
