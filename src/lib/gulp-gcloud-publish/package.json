@@ -1,26 +1,27 @@
 {
-  "_from": "gulp-gcloud-publish@^2.1.1",
+  "_from": "gulp-gcloud-publish",
   "_id": "gulp-gcloud-publish@2.1.1",
   "_inBundle": false,
   "_integrity": "sha512-WAS5/FeZa8JjZwj0bnNyInFLY/6KnzkBUNxVNZ/uJ/jL4WB8ZqOnXJAUwxSBKKtEbAJPScuT2+OvWK4R/KHmPA==",
   "_location": "/gulp-gcloud-publish",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "tag",
     "registry": true,
-    "raw": "gulp-gcloud-publish@^2.1.1",
+    "raw": "gulp-gcloud-publish",
     "name": "gulp-gcloud-publish",
     "escapedName": "gulp-gcloud-publish",
-    "rawSpec": "^2.1.1",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "^2.1.1"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/gulp-gcloud-publish/-/gulp-gcloud-publish-2.1.1.tgz",
   "_shasum": "3474b4bdab76acdd17d76a6785cbad51c17d00b1",
-  "_spec": "gulp-gcloud-publish@^2.1.1",
+  "_spec": "gulp-gcloud-publish",
   "_where": "/Users/sukaihan/ehanlin/event/event-termtest",
   "author": {
     "name": "Alberto Restifo"
