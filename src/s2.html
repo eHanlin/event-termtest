@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
     <head>
-        <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link type="text/css" rel="stylesheet" href="https://www.ehanlin.com.tw/lesscss/ehanlin-basicss.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/termtest.css"/>
-        <link type="image/png" rel="icon" href="https://www.ehanlin.com.tw/images/favicon.png"/>
+        <meta charset="UTF-8" />
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+        <link type="text/css" rel="stylesheet" href="https://www.ehanlin.com.tw/lesscss/ehanlin-basicss.css" />
+        <link type="text/css" rel="stylesheet" href="./css/termtest.css" />
+        <link type="image/png" rel="icon" href="https://www.ehanlin.com.tw/images/favicon.png" />
         <title>翰林雲端學院｜線上模擬段考，你就是下一位新星！</title>
     </head>
 
@@ -19,7 +19,7 @@
 
         <div class="layout-right container">
             <div class="box">
-                <img src="./img/s2/banner.png?ts=20190308" class="banner">
+                <img src="./img/s2/banner.png?ts=20190308" class="banner" />
             </div>
 
             <div class="box">
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="schedule"></div>
-                <img src="./img/s2/notice.png?ts=20190308" class="banner">
+                <img src="./img/s2/notice.png?ts=20190308" class="banner" />
             </div>
         </div>
 
@@ -42,7 +42,7 @@
         <script type="text/javascript" src="./lib/moment/min/moment.min.js"></script>
         <script type="text/javascript" src="./lib/jquery/tmp/jquery.js"></script>
         <script type="text/javascript" src="./lib/block-ui/jquery.blockUI.js"></script>
-        <script type="text/javascript" src="./js/jquery.tmpl.js" ></script>
+        <script type="text/javascript" src="./js/jquery.tmpl.js"></script>
         <script type="text/javascript" src="./js/sim.js?ts=20190308"></script>
 
         <script id="sim-board-template" type="text/jquery-template">
@@ -112,11 +112,13 @@
 
         <script type="text/javascript">
             (function($) {
-                $(function () {
+                $(function() {
                     var now = new Date();
                     Sim.getTermtest(107, "sectional", function(data) {
                         var schedule = _.chain(data)
-                            .filter(function(it) { return ["2", "4", "6"].indexOf(it.volume) != -1 })
+                            .filter(function(it) {
+                                return ["2", "4", "6"].indexOf(it.volume) != -1;
+                            })
                             .each(function(it) {
                                 it.now = now.getTime();
                                 switch (it.volume) {
@@ -134,24 +136,30 @@
                                         break;
                                 }
                             })
-                            .groupBy(function(it) { return it.order })
-                            .map(function(exam, number) { return { number: number, exam: exam, comic: number + "st.png" } })
+                            .groupBy(function(it) {
+                                return it.order;
+                            })
+                            .map(function(exam, number) {
+                                return { number: number, exam: exam, comic: number + "st.png" };
+                            })
                             .value();
 
-                        console.log(schedule)
-                        $('#termtest-template').tmpl(schedule).appendTo(".schedule");
+                        console.log(schedule);
+                        $("#termtest-template")
+                            .tmpl(schedule)
+                            .appendTo(".schedule");
                         $(".result").click(function() {
                             var $this = $(this);
                             var year = $this.data("year");
                             var volume = $this.data("volume");
                             var number = $this.data("number");
                             Sim.getBoard(year, volume, number);
-                        })
+                        });
                     });
                 });
-            })(jQuery)
+            })(jQuery);
         </script>
 
-        <script type="text/javascript" data-module="ehanlin-header,ehanlin-menu,ehanlin-footer,ehanlin-event-left-side" src="https://s3-ap-northeast-1.amazonaws.com/ehanlin-web-resource/common_webcomponent/current/js/ehanlin-loader.js"></script>
+        <script type="text/javascript" crossorigin="anonymous" data-module="ehanlin-header,ehanlin-menu,ehanlin-footer,ehanlin-event-left-side" src="/app/web-component/js/ehanlin-loader.js"></script>
     </body>
 </html>
