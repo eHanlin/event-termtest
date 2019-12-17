@@ -18,7 +18,7 @@ const projectName = "event/termtest/";
 
 let uploadGCSProd = bucketName => {
     return gulp
-        .src(["dist/*.html", "dist/js/**", "dist/img/**", "dist/lib/**", "dist/css/**"], {
+        .src(["dist/*.html", "dist/js/**", "dist/img/**", "dist/css/**"], {
             base: `${__dirname}/dist/`
         })
         .pipe(
