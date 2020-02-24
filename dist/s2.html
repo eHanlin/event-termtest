@@ -19,7 +19,7 @@
 
         <div class="layout-right container">
             <div class="box">
-                <img src="./img/s2/banner.png?ts=20190308" class="banner" />
+                <img src="./img/108s2/banner.png?ts=20190308" class="banner" />
             </div>
 
             <div class="box">
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="schedule"></div>
-                <img src="./img/s2/notice.png?ts=20190308" class="banner" />
+                <img src="./img/108s2/notice.png?ts=20190308" class="banner" />
             </div>
         </div>
 
@@ -47,7 +47,7 @@
 
         <script id="sim-board-template" type="text/jquery-template">
             <div class="sim-board {{= examType}}">
-                <img class="board" src="./img/s2/base.png">
+                <img class="board" src="./img/108s2/base.png">
                 <div class="exam-name">{{= examName}}</div>
                 <ul>
                     {{each heroes}}
@@ -69,7 +69,7 @@
 
         <script id="termtest-template" type="text/x-jquery-template">
             <div class="section">
-                <img class="banner" src="./img/s2/{{= comic}}?ts=20190308">
+                <img class="banner" src="./img/108s2/{{= comic}}?ts=20190308">
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="center">
@@ -114,7 +114,7 @@
             (function($) {
                 $(function() {
                     var now = new Date();
-                    Sim.getTermtest(107, "sectional", function(data) {
+                    Sim.getTermtest(108, "sectional", function(data) {
                         var schedule = _.chain(data)
                             .filter(function(it) {
                                 return ["2", "4", "6"].indexOf(it.volume) != -1;
